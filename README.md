@@ -9,18 +9,16 @@ Install the package via composer:
 composer require ayles-software/laravel-sms-messagemedia
 ```
 
-When generating API key in Message Media, create Basic Authentication key. **HMAC Auth is not supported**
+When generating an API key in Message Media make sure to use the Basic Authentication type. **HMAC Auth is not supported**
 
 Add your MessageMedia api key, secret and optional default sender sms_from to your `config/services.php`:
 
 ```php
-...
 'message_media' => [
     'key' => env('MESSAGE_MEDIA_KEY'),
     'secret'  => env('MESSAGE_MEDIA_SECRET'),
     'from' => env('MESSAGE_MEDIA_FROM'),
 ],
-...
 ```
 
 ## Usage
@@ -63,15 +61,13 @@ class SmsTest extends Notification
 In notifiable model (User), include method `routeNotificationForMessageMedia()` that returns recipient mobile number:
 
 ```php
-...
 public function routeNotificationForMessageMedia()
 {
     return $this->phone;
 }
-...
 ```
 
-From controller then send notification standard way:
+Then send a notification the standard way:
 ```php
 $user = User::find(1);
 
@@ -83,16 +79,12 @@ Following events are triggered by Notification. By default:
 - Illuminate\Notifications\Events\NotificationSending
 - Illuminate\Notifications\Events\NotificationSent
 
-and this channel triggers one when submission fails for any reason:
+NotificationFailed will trigger if something goes wrong
 - Illuminate\Notifications\Events\NotificationFailed
 
 ## Testing
 
-Incompleted
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+Yes
 
 ## License
 
