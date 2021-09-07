@@ -28,7 +28,7 @@ class MessageMediaChannel
             $message->from ?: config('services.message_media.from'),
         );
 
-        if (! $result->status) {
+        if (! $result->success) {
             $this->events->dispatch(
                 new NotificationFailed($notifiable, $notification, get_class($this), $result->errorMessage)
             );
