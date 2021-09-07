@@ -1,5 +1,5 @@
 {
-    "name": "ayles-software/laravel-sms-clicksend",
+    "name": "ayles-software/laravel-sms-messagemedia",
     "description": "ClickSend Notifications channel for Laravel 8",
     "keywords": ["laravel", "notifications", "messagemedia", "sms"],
     "homepage": "https://github.com/parkourben99/laravel-sms-clicksend",
