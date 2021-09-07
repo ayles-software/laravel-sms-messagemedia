@@ -22,7 +22,7 @@ class MessageMediaChannel
         $message = $notification->toMessageMedia($notifiable);
 
         $result = $this->client->sendSms(
-            $message->content,
+            $message->message,
             $message->delay,
             $notifiable->routeNotificationForMessageMedia(),
             $message->from ?: config('services.message_media.from'),
@@ -35,5 +35,7 @@ class MessageMediaChannel
 
             throw new Exception('Notification failed '.$result->errorMessage);
         }
+
+        return $result;
     }
 }

@@ -4,32 +4,23 @@ namespace AylesSoftware\MessageMedia;
 
 class MessageMediaMessage
 {
-    /**
-     * The phone number the message should be sent from.
-     */
     public string $from = '';
 
-    /**
-     * Timestamp delay.
-     */
     public $delay = null;
 
-    /**
-     * @param  string  $content
-     */
-    public function __construct(public string $content = '')
+    public function __construct(public string $message = '')
     {
     }
 
     /**
      * Set the message content.
      *
-     * @param  string  $content
+     * @param string $message
      * @return $this
      */
-    public function message($content)
+    public function message(string $message)
     {
-        $this->content = $content;
+        $this->message = $message;
 
         return $this;
     }
@@ -37,10 +28,10 @@ class MessageMediaMessage
     /**
      * Set the phone number or sender name the message should be sent from.
      *
-     * @param  string  $from
+     * @param string $from
      * @return $this
      */
-    public function from($from)
+    public function from(string $from)
     {
         $this->from = $from;
 
@@ -52,7 +43,7 @@ class MessageMediaMessage
      *
      * Leave blank for immediate delivery.
      *
-     * @param  string  $delay
+     * @param  mixed  $delay
      * @return $this
      */
     public function delay($delay)
