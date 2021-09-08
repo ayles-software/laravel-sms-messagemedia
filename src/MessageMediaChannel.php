@@ -30,7 +30,7 @@ class MessageMediaChannel
 
         if (! $result->success) {
             $this->events->dispatch(
-                new NotificationFailed($notifiable, $notification, get_class($this), $result->errorMessage)
+                new NotificationFailed($notifiable, $notification, get_class($this), (array) $result)
             );
 
             throw new Exception('Notification failed '.$result->errorMessage);

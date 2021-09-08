@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class MessageMediaApi
 {
-    protected $url = 'https://api.messagemedia.com/v1/messages';
+    protected string $url = 'https://api.messagemedia.com/v1/messages';
 
     public function sendSms($message, $delay, $to, $from)
     {
@@ -32,12 +32,20 @@ class MessageMediaApi
         if (! $response->successful()) {
             return (object) [
                 'success' => false,
+                'message' => $message,
+                'to' => $to,
+                'from' => $from,
+                'delay' => $delay,
                 'errorMessage' => $response->json('details.0') ?: $response->json('message'),
             ];
         }
 
         return (object) [
             'id' => $response->json('messages.0.message_id'),
+            'message' => $message,
+            'to' => $to,
+            'from' => $from,
+            'delay' => $delay,
             'success' => true,
         ];
     }
