@@ -14,11 +14,8 @@ class MessageMediaMessage
 
     /**
      * Set the message content.
-     *
-     * @param string $message
-     * @return $this
      */
-    public function message(string $message)
+    public function message(string $message): self
     {
         $this->message = $message;
 
@@ -27,11 +24,8 @@ class MessageMediaMessage
 
     /**
      * Set the phone number or sender name the message should be sent from.
-     *
-     * @param string $from
-     * @return $this
      */
-    public function from(string $from)
+    public function from(string $from): self
     {
         $this->from = $from;
 
@@ -40,13 +34,9 @@ class MessageMediaMessage
 
     /**
      * Set the delay when this should be sent.
-     *
      * Leave blank for immediate delivery.
-     *
-     * @param  mixed  $delay
-     * @return $this
      */
-    public function delay($delay)
+    public function delay($delay): self
     {
         $this->delay = $delay;
 

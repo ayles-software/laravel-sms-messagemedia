@@ -1,6 +1,6 @@
-# MessageMedia sms notifications channel for Laravel 8
+# MessageMedia sms notifications channel for Laravel 10
 
-This package makes it easy to send notifications using [messagemedia.com](//messagemedia.com) with Laravel 8.
+This package makes it easy to send notifications using [messagemedia.com](//messagemedia.com) with Laravel 10.
 
 ## Installation
 

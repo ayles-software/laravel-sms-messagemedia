@@ -1,6 +1,6 @@
 {
     "name": "ayles-software/laravel-sms-messagemedia",
-    "description": "ClickSend Notifications channel for Laravel 8",
+    "description": "ClickSend Notifications channel for Laravel 10",
     "keywords": ["laravel", "notifications", "messagemedia", "sms"],
     "homepage": "https://github.com/parkourben99/laravel-sms-clicksend",
     "license": "MIT",
@@ -12,11 +12,11 @@
         }
     ],
     "require": {
-        "php": "^8.0",
-        "illuminate/http": "^8.0",
-        "illuminate/events": "^8.0",
-        "illuminate/support": "^8.0",
-        "illuminate/notifications": "^8.0"
+        "php": "^8.2",
+        "illuminate/http": "^10.0",
+        "illuminate/events": "^10.0",
+        "illuminate/support": "^10.0",
+        "illuminate/notifications": "^10.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0"
