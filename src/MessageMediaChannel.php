@@ -24,7 +24,7 @@ class MessageMediaChannel
         $result = $this->client->sendSms(
             $message->message,
             $message->delay,
-            $notifiable->routeNotificationForMessageMedia(),
+            $message->to ?: $notifiable->routeNotificationForMessageMedia(),
             $message->from ?: config('services.message_media.from'),
         );
 
